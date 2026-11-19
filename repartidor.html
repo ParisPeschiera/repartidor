@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encuesta de Evaluación al Repartidor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #5b47e0;
+    --bg: #eceafb;
+    --card: #ffffff;
+    --text: #202124;
+    --muted: #5f6368;
+    --link: #1a5fb4;
+    --border: #dadce0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { min-height: 100%; }
+  body {
+    font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    padding: clamp(12px, 3vw, 32px) clamp(12px, 4vw, 24px) 48px;
+  }
+  .wrap {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.08);
+  }
+  .card::before {
+    content: "";
+    display: block;
+    height: 10px;
+    background: var(--accent);
+  }
+  .card-body {
+    padding: clamp(24px, 6vw, 40px) clamp(20px, 6vw, 40px) clamp(24px, 6vw, 36px);
+  }
+  h1 {
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: clamp(16px, 4vw, 24px);
+  }
+  .msg {
+    font-size: clamp(1rem, 3.6vw, 1.125rem);
+    margin-bottom: clamp(24px, 6vw, 36px);
+  }
+  .again {
+    display: inline-block;
+    font-size: clamp(1rem, 3.6vw, 1.125rem);
+    color: var(--link);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    padding: 6px 0; /* zona táctil más cómoda */
+  }
+  .again:hover { color: var(--accent); }
+  .again:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 20px;
+    padding: 0 8px;
+  }
+  footer p + p { margin-top: 12px; }
+  footer a { color: var(--muted); }
+  .brand {
+    margin-top: 28px;
+    font-size: clamp(1.4rem, 5.5vw, 1.75rem);
+    color: #80868b;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .brand strong { font-weight: 500; }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card" aria-labelledby="titulo">
+      <div class="card-body">
+        <h1 id="titulo">Encuesta de Evaluación al Repartidor</h1>
+        <p class="msg">Se ha registrado tu respuesta.</p>
+        <a class="again" href="#" id="otra">Enviar otra respuesta</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>Gracias por ayudarnos a mejorar nuestro servicio de reparto.</p>
+      <p>¿Tienes algún problema? <a href="#" id="contacto">Contactar con el responsable de la encuesta</a></p>
+    </footer>
+  </main>
+
+<script>
+  // Sustituye estos enlaces por la URL real de tu formulario y tu contacto.
+  document.getElementById('otra').addEventListener('click', function (e) {
+    e.preventDefault();
+    location.reload();
+  });
+  document.getElementById('contacto').addEventListener('click', function (e) {
+    e.preventDefault();
+  });
+</script>
+</body>
+</html>
